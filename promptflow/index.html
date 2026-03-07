@@ -991,6 +991,243 @@
       font-size: var(--text-xs);
       color: var(--text-secondary);
     }
+
+    /* ========== PRODUCT MOCKUP ========== */
+    .product-mockup {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .mockup-browser {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+    }
+    .mockup-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .mockup-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+    }
+    .mockup-url {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-primary);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      max-width: 300px;
+    }
+    .mockup-body {
+      display: flex;
+      min-height: 340px;
+    }
+    /* Chat area */
+    .mockup-chat {
+      flex: 1;
+      padding: 24px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-primary);
+    }
+    .mockup-chat-msg {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .mockup-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .mockup-bubble {
+      background: var(--bg-secondary);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      max-width: 280px;
+    }
+    /* Context menu */
+    .mockup-context-menu {
+      position: absolute;
+      top: 60px;
+      left: 40px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+      padding: 6px 0;
+      width: 210px;
+      z-index: 2;
+      font-size: 13px;
+    }
+    .mockup-cm-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px 4px;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--text-primary);
+    }
+    .mockup-cm-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 4px 0;
+    }
+    .mockup-cm-folder {
+      padding: 5px 14px;
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mockup-cm-item {
+      padding: 4px 14px 4px 32px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      cursor: default;
+    }
+    .mockup-cm-active {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 4px;
+      margin: 1px 4px;
+      padding: 4px 10px 4px 28px;
+    }
+    /* Input area */
+    .mockup-input-area {
+      margin-top: auto;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .mockup-input-text {
+      flex: 1;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+    .mockup-input-btn {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    /* Side panel */
+    .mockup-sidepanel {
+      width: 220px;
+      border-left: 1px solid var(--border);
+      padding: 14px;
+      background: var(--bg-elevated);
+      flex-shrink: 0;
+    }
+    .mockup-sp-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mockup-sp-folder {
+      margin-bottom: 10px;
+      padding-left: 8px;
+    }
+    .mockup-sp-fname {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .mockup-sp-count {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      font-weight: 400;
+    }
+    .mockup-sp-prompt {
+      font-size: 11px;
+      color: var(--text-secondary);
+      padding: 3px 0 3px 12px;
+      cursor: default;
+    }
+    .mockup-sp-active {
+      color: var(--accent);
+      font-weight: 600;
+      background: var(--accent-soft);
+      border-radius: 4px;
+      padding: 3px 6px 3px 12px;
+    }
+    /* Floating labels */
+    .mockup-label {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--bg-elevated);
+      padding: 6px 14px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .mockup-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: block;
+    }
+    .mockup-label-1 {
+      top: 80px;
+      left: -24px;
+    }
+    .mockup-label-2 {
+      bottom: 40px;
+      right: -20px;
+    }
+    @media (max-width: 768px) {
+      .mockup-sidepanel { display: none; }
+      .mockup-context-menu { left: 20px; width: 180px; }
+      .mockup-label { font-size: 11px; padding: 5px 10px; }
+      .mockup-label-1 { left: 4px; top: 60px; }
+      .mockup-label-2 { right: 4px; bottom: 20px; }
+      .mockup-body { min-height: 280px; }
+    }
   </style>
 </head>
 <body>
@@ -1048,9 +1285,92 @@
         <span>✦ Free forever</span> · 5 prompts, 3 folders · No account needed · Your data stays local
       </p>
 
+      <!-- Product Visual: designed mockup showing the solution working -->
+      <!-- Visual Branding: shelf-test passing, warm, high-contrast -->
+      <!-- Bottleneck Monetizer: show the bottleneck being resolved, not UI chrome -->
+      <!-- Listing Optimization: text overlays highlighting positioning angle -->
       <div class="hero-screenshot animate animate-d4">
-        <div class="screenshot-placeholder">
-          <span>Extension Preview</span>
+        <div class="product-mockup">
+          <!-- Browser frame -->
+          <div class="mockup-browser">
+            <div class="mockup-toolbar">
+              <div class="mockup-dots">
+                <span style="background:#FF605C;"></span>
+                <span style="background:#FFBD44;"></span>
+                <span style="background:#00CA4E;"></span>
+              </div>
+              <div class="mockup-url">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="opacity:0.4;"><path d="M6 1v4M6 5l3.5 2M6 5L2.5 7" stroke="currentColor" stroke-width="1"/></svg>
+                <span>chat.openai.com</span>
+              </div>
+            </div>
+            <div class="mockup-body">
+              <!-- Main chat area (left) -->
+              <div class="mockup-chat">
+                <div class="mockup-chat-msg assistant">
+                  <div class="mockup-avatar" style="background:#10A37F; color:#fff; font-size:11px; display:flex; align-items:center; justify-content:center;">AI</div>
+                  <div class="mockup-bubble">How can I help you today?</div>
+                </div>
+                <!-- Right-click context menu overlay -->
+                <div class="mockup-context-menu">
+                  <div class="mockup-cm-header">
+                    <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#D97757"/><path d="M10 11h12M10 16h8M10 21h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    PromptFlow
+                  </div>
+                  <div class="mockup-cm-divider"></div>
+                  <div class="mockup-cm-folder">
+                    <span style="color:#D97757;">📁</span> Marketing
+                  </div>
+                  <div class="mockup-cm-item">Blog post intro</div>
+                  <div class="mockup-cm-item mockup-cm-active">SEO meta description</div>
+                  <div class="mockup-cm-item">Social media hook</div>
+                  <div class="mockup-cm-divider"></div>
+                  <div class="mockup-cm-folder">
+                    <span style="color:#6A9BCC;">📁</span> Coding
+                  </div>
+                  <div class="mockup-cm-item">Code review prompt</div>
+                  <div class="mockup-cm-item">Debug this error</div>
+                  <div class="mockup-cm-divider"></div>
+                  <div class="mockup-cm-folder">
+                    <span style="color:#788C5D;">📁</span> Writing
+                  </div>
+                </div>
+                <!-- Input area with pasted prompt -->
+                <div class="mockup-input-area">
+                  <div class="mockup-input-text">Write a compelling SEO meta description for the following page. Keep it under 155 characters, include the primary keyword, and add a clear call to action…</div>
+                  <div class="mockup-input-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13l10-5L3 3v4l6 1-6 1v4z" fill="#fff"/></svg>
+                  </div>
+                </div>
+              </div>
+              <!-- Side panel (right) -->
+              <div class="mockup-sidepanel">
+                <div class="mockup-sp-header">
+                  <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#D97757"/><path d="M10 11h12M10 16h8M10 21h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+                  <span style="font-weight:700; font-size: 13px;">PromptFlow</span>
+                </div>
+                <div class="mockup-sp-folder" style="border-left: 3px solid #D97757;">
+                  <div class="mockup-sp-fname">📁 Marketing <span class="mockup-sp-count">3</span></div>
+                  <div class="mockup-sp-prompt">Blog post intro</div>
+                  <div class="mockup-sp-prompt mockup-sp-active">SEO meta description</div>
+                  <div class="mockup-sp-prompt">Social media hook</div>
+                </div>
+                <div class="mockup-sp-folder" style="border-left: 3px solid #6A9BCC;">
+                  <div class="mockup-sp-fname">📁 Coding <span class="mockup-sp-count">2</span></div>
+                </div>
+                <div class="mockup-sp-folder" style="border-left: 3px solid #788C5D;">
+                  <div class="mockup-sp-fname">📁 Writing <span class="mockup-sp-count">4</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Floating annotation labels -->
+          <div class="mockup-label mockup-label-1">
+            <span class="mockup-label-dot"></span> Right-click to paste
+          </div>
+          <div class="mockup-label mockup-label-2">
+            <span class="mockup-label-dot"></span> Organized in folders
+          </div>
         </div>
       </div>
     </div>
