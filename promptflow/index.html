@@ -1414,14 +1414,43 @@
       <p style="color: var(--text-secondary); font-size: var(--text-base); max-width: 480px; margin: 0 auto var(--space-md);">
         We build browser tools that save you time. Join the list to hear about new extensions and updates.
       </p>
-      <!-- Brevo form — replace ACTION URL with your Brevo form endpoint -->
-      <form style="display: flex; gap: 10px; max-width: 460px; margin: 0 auto var(--space-xs); flex-wrap: wrap; justify-content: center;" method="POST" action="https://example.com/brevo-form-endpoint">
-        <input type="hidden" name="SOURCE" value="promptflow">
-        <input type="email" name="EMAIL" placeholder="your@email.com" required aria-label="Email address"
+      <form style="display: flex; gap: 10px; max-width: 460px; margin: 0 auto var(--space-xs); flex-wrap: wrap; justify-content: center;" id="pf-subscribe-form">
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address"
           style="flex: 1; min-width: 240px; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius-md); font: inherit; font-size: var(--text-sm); background: var(--bg-elevated); color: var(--text-primary); outline: none;">
-        <button type="submit" class="btn-primary" style="padding: 14px 24px;">Subscribe</button>
+        <button type="submit" class="btn-primary" style="padding: 14px 24px;" id="pf-subscribe-btn">Subscribe</button>
       </form>
-      <p style="color: var(--text-tertiary); font-size: var(--text-xs);">No spam. Unsubscribe anytime.</p>
+      <p style="color: var(--text-tertiary); font-size: var(--text-xs);" id="pf-subscribe-msg">No spam. Unsubscribe anytime.</p>
+      <script>
+        document.getElementById('pf-subscribe-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = document.getElementById('pf-subscribe-btn');
+          var msg = document.getElementById('pf-subscribe-msg');
+          var email = this.email.value;
+          btn.textContent = 'Subscribing...';
+          btn.disabled = true;
+          fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: 'promptflow' })
+          }).then(function(r) { return r.json(); }).then(function(data) {
+            if (data.success) {
+              msg.textContent = '\u2713 You\'re in! We\'ll keep you posted.';
+              msg.style.color = 'var(--success)';
+              btn.textContent = 'Subscribed \u2713';
+            } else {
+              msg.textContent = 'Something went wrong. Please try again.';
+              msg.style.color = 'var(--accent)';
+              btn.textContent = 'Subscribe';
+              btn.disabled = false;
+            }
+          }).catch(function() {
+            msg.textContent = 'Something went wrong. Please try again.';
+            msg.style.color = 'var(--accent)';
+            btn.textContent = 'Subscribe';
+            btn.disabled = false;
+          });
+        });
+      </script>
     </div>
   </section>
 

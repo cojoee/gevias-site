@@ -393,14 +393,44 @@
         <h2>Stay in the loop</h2>
         <p>Get notified when we launch new tools. No spam — just product announcements and useful tips.</p>
       </div>
-      <!-- Brevo form — replace ACTION URL with your Brevo form endpoint -->
-      <form class="newsletter-form" method="POST" action="https://example.com/brevo-form-endpoint">
-        <input type="email" name="EMAIL" placeholder="your@email.com" required aria-label="Email address">
-        <button type="submit" class="btn-primary" style="padding: 14px 24px;">
+      <form class="newsletter-form" id="subscribe-form">
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit" class="btn-primary" style="padding: 14px 24px;" id="subscribe-btn">
           Subscribe
         </button>
       </form>
-      <p class="newsletter-note">We respect your privacy. Unsubscribe anytime. No spam, ever.</p>
+      <p class="newsletter-note" id="subscribe-msg">We respect your privacy. Unsubscribe anytime. No spam, ever.</p>
+      <script>
+        document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = document.getElementById('subscribe-btn');
+          var msg = document.getElementById('subscribe-msg');
+          var email = this.email.value;
+          btn.textContent = 'Subscribing...';
+          btn.disabled = true;
+          fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: 'homepage' })
+          }).then(function(r) { return r.json(); }).then(function(data) {
+            if (data.success) {
+              msg.textContent = '✓ You\'re in! We\'ll notify you when new tools launch.';
+              msg.style.color = 'var(--success)';
+              btn.textContent = 'Subscribed ✓';
+            } else {
+              msg.textContent = 'Something went wrong. Please try again.';
+              msg.style.color = 'var(--accent)';
+              btn.textContent = 'Subscribe';
+              btn.disabled = false;
+            }
+          }).catch(function() {
+            msg.textContent = 'Something went wrong. Please try again.';
+            msg.style.color = 'var(--accent)';
+            btn.textContent = 'Subscribe';
+            btn.disabled = false;
+          });
+        });
+      </script>
     </div>
   </section>
 
