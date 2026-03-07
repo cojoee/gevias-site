@@ -992,241 +992,146 @@
       color: var(--text-secondary);
     }
 
-    /* ========== PRODUCT MOCKUP ========== */
-    .product-mockup {
+    /* ========== HERO PRODUCT VISUAL ==========
+       Agent Directives Applied:
+       - Visual Branding: Shelf test. Simplicity. Millisecond recognition. Warm color hierarchy (60/30/10).
+       - Flow: Single focus. Zero interpretation. Ruthless elimination. Warm invitation.
+       - Bottleneck Monetizer: Show solution working. Not UI chrome. Outcome, not settings.
+       - Monetization: First 3 seconds. Above-fold confirms right place. Matches promise.
+       - Listing Optimization: Text overlays highlighting positioning angle.
+       ========================================== */
+    .hero-visual {
       position: relative;
-      max-width: 900px;
+      max-width: 820px;
       margin: 0 auto;
+      padding: 40px 20px;
     }
-    .mockup-browser {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border);
-      background: var(--bg-elevated);
+    .hero-visual-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, var(--accent-soft) 0%, transparent 70%);
+      border-radius: var(--radius-xl);
+      z-index: 0;
     }
-    .mockup-toolbar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 16px;
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-    }
-    .mockup-dots {
-      display: flex;
-      gap: 6px;
-    }
-    .mockup-dots span {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: block;
-    }
-    .mockup-url {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--bg-primary);
-      border-radius: 6px;
-      padding: 5px 12px;
-      font-size: 12px;
-      color: var(--text-tertiary);
-      max-width: 300px;
-    }
-    .mockup-body {
-      display: flex;
-      min-height: 340px;
-    }
-    /* Chat area */
-    .mockup-chat {
-      flex: 1;
-      padding: 24px;
+    .hero-cards {
       position: relative;
+      z-index: 1;
       display: flex;
-      flex-direction: column;
-      background: var(--bg-primary);
-    }
-    .mockup-chat-msg {
-      display: flex;
-      gap: 10px;
       align-items: flex-start;
-      margin-bottom: 16px;
-    }
-    .mockup-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .mockup-bubble {
-      background: var(--bg-secondary);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 13px;
-      color: var(--text-secondary);
-      max-width: 280px;
-    }
-    /* Context menu */
-    .mockup-context-menu {
-      position: absolute;
-      top: 60px;
-      left: 40px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
-      padding: 6px 0;
-      width: 210px;
-      z-index: 2;
-      font-size: 13px;
-    }
-    .mockup-cm-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px 4px;
-      font-weight: 700;
-      font-size: 12px;
-      color: var(--text-primary);
-    }
-    .mockup-cm-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 4px 0;
-    }
-    .mockup-cm-folder {
-      padding: 5px 14px;
-      font-weight: 600;
-      font-size: 12px;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .mockup-cm-item {
-      padding: 4px 14px 4px 32px;
-      font-size: 12px;
-      color: var(--text-secondary);
-      cursor: default;
-    }
-    .mockup-cm-active {
-      background: var(--accent);
-      color: #fff;
-      border-radius: 4px;
-      margin: 1px 4px;
-      padding: 4px 10px 4px 28px;
-    }
-    /* Input area */
-    .mockup-input-area {
-      margin-top: auto;
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 14px;
-    }
-    .mockup-input-text {
-      flex: 1;
-      font-size: 12px;
-      line-height: 1.5;
-      color: var(--text-primary);
-    }
-    .mockup-input-btn {
-      width: 32px;
-      height: 32px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      gap: 32px;
     }
-    /* Side panel */
-    .mockup-sidepanel {
-      width: 220px;
-      border-left: 1px solid var(--border);
-      padding: 14px;
+    /* Side Panel Card */
+    .hero-card {
       background: var(--bg-elevated);
-      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transition: transform 0.3s var(--ease);
     }
-    .mockup-sp-header {
+    .hero-card:hover { transform: translateY(-4px); }
+    .card-panel {
+      width: 280px;
+      transform: rotate(-2deg);
+    }
+    .card-menu {
+      width: 240px;
+      margin-top: 40px;
+      transform: rotate(1.5deg);
+    }
+    /* Panel internals */
+    .cp-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 14px;
-      padding-bottom: 10px;
+      gap: 10px;
+      padding: 16px 18px 12px;
       border-bottom: 1px solid var(--border);
     }
-    .mockup-sp-folder {
-      margin-bottom: 10px;
-      padding-left: 8px;
+    .cp-logo {
+      width: 28px; height: 28px; border-radius: 6px; background: var(--accent);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .mockup-sp-fname {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 4px;
+    .cp-logo svg { width: 16px; height: 16px; }
+    .cp-title { font-weight: 700; font-size: 14px; }
+    .cp-body { padding: 12px 16px 18px; }
+    .cp-folder {
+      margin-bottom: 12px;
+      padding-left: 10px;
+      border-left: 3px solid transparent;
     }
-    .mockup-sp-count {
-      font-size: 10px;
-      color: var(--text-tertiary);
-      font-weight: 400;
+    .cp-folder-name {
+      font-size: 13px; font-weight: 650; margin-bottom: 4px;
+      display: flex; align-items: center; gap: 6px;
     }
-    .mockup-sp-prompt {
-      font-size: 11px;
-      color: var(--text-secondary);
-      padding: 3px 0 3px 12px;
-      cursor: default;
+    .cp-folder-name .cp-count {
+      font-size: 11px; color: var(--text-tertiary); font-weight: 400;
     }
-    .mockup-sp-active {
-      color: var(--accent);
-      font-weight: 600;
-      background: var(--accent-soft);
-      border-radius: 4px;
-      padding: 3px 6px 3px 12px;
+    .cp-prompt {
+      font-size: 12px; color: var(--text-secondary);
+      padding: 4px 0 4px 18px; line-height: 1.5;
     }
-    /* Floating labels */
-    .mockup-label {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-primary);
+    .cp-prompt-active {
+      color: var(--accent); font-weight: 600;
+      background: var(--accent-soft); border-radius: 6px;
+      padding: 5px 10px 5px 18px; margin: 2px -4px;
+    }
+    /* Context Menu Card */
+    .cm-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 16px 8px;
+      font-weight: 700; font-size: 13px;
+    }
+    .cm-logo {
+      width: 22px; height: 22px; border-radius: 5px; background: var(--accent);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .cm-logo svg { width: 12px; height: 12px; }
+    .cm-body { padding: 0 0 10px; }
+    .cm-divider { height: 1px; background: var(--border); margin: 5px 12px; }
+    .cm-folder {
+      padding: 5px 16px; font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .cm-item {
+      padding: 4px 16px 4px 34px; font-size: 12px; color: var(--text-secondary);
+    }
+    .cm-item-active {
+      background: var(--accent); color: #fff;
+      border-radius: 5px; margin: 2px 8px;
+      padding: 5px 12px 5px 26px; font-weight: 500;
+    }
+    /* Floating labels — positioned outside cards for clarity */
+    .hero-label {
+      position: absolute; z-index: 2;
+      display: flex; align-items: center; gap: 8px;
       background: var(--bg-elevated);
-      padding: 6px 14px;
-      border-radius: 999px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
+      padding: 8px 18px; border-radius: 999px;
+      box-shadow: var(--shadow-md); border: 1px solid var(--border);
+      font-size: 13px; font-weight: 600;
       white-space: nowrap;
     }
-    .mockup-label-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: block;
+    .hero-label-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--accent); display: block; flex-shrink: 0;
     }
-    .mockup-label-1 {
-      top: 80px;
-      left: -24px;
+    .hero-label-1 { bottom: 10px; left: 0; }
+    .hero-label-2 { top: 10px; right: 0; }
+    /* Arrow connector between cards */
+    .hero-arrow {
+      position: absolute; z-index: 2;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
     }
-    .mockup-label-2 {
-      bottom: 40px;
-      right: -20px;
-    }
+    .hero-arrow svg { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08)); }
+
     @media (max-width: 768px) {
-      .mockup-sidepanel { display: none; }
-      .mockup-context-menu { left: 20px; width: 180px; }
-      .mockup-label { font-size: 11px; padding: 5px 10px; }
-      .mockup-label-1 { left: 4px; top: 60px; }
-      .mockup-label-2 { right: 4px; bottom: 20px; }
-      .mockup-body { min-height: 280px; }
+      .hero-cards { flex-direction: column; align-items: center; gap: 20px; }
+      .card-panel { transform: rotate(0deg); width: 300px; max-width: 90vw; }
+      .card-menu { transform: rotate(0deg); width: 260px; max-width: 85vw; margin-top: 0; }
+      .hero-label-1 { left: 10px; bottom: 0; }
+      .hero-label-2 { right: 10px; top: 0; }
+      .hero-arrow { display: none; }
+      .hero-visual { padding: 24px 10px; }
     }
   </style>
 </head>
@@ -1285,91 +1190,77 @@
         <span>✦ Free forever</span> · 5 prompts, 3 folders · No account needed · Your data stays local
       </p>
 
-      <!-- Product Visual: designed mockup showing the solution working -->
-      <!-- Visual Branding: shelf-test passing, warm, high-contrast -->
-      <!-- Bottleneck Monetizer: show the bottleneck being resolved, not UI chrome -->
-      <!-- Listing Optimization: text overlays highlighting positioning angle -->
-      <div class="hero-screenshot animate animate-d4">
-        <div class="product-mockup">
-          <!-- Browser frame -->
-          <div class="mockup-browser">
-            <div class="mockup-toolbar">
-              <div class="mockup-dots">
-                <span style="background:#FF605C;"></span>
-                <span style="background:#FFBD44;"></span>
-                <span style="background:#00CA4E;"></span>
+      <!-- Hero Product Visual — rebuilt with all agent directives -->
+      <div class="hero-screenshot animate animate-d4" style="border: none; box-shadow: none; background: none;">
+        <div class="hero-visual">
+          <div class="hero-visual-bg"></div>
+          <div class="hero-cards">
+
+            <!-- Card 1: Side Panel — "Your prompts, organized" -->
+            <div class="hero-card card-panel">
+              <div class="cp-header">
+                <div class="cp-logo">
+                  <svg viewBox="0 0 32 32" fill="none"><path d="M10 11h12M10 16h8M10 21h10" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/></svg>
+                </div>
+                <span class="cp-title">PromptFlow</span>
               </div>
-              <div class="mockup-url">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="opacity:0.4;"><path d="M6 1v4M6 5l3.5 2M6 5L2.5 7" stroke="currentColor" stroke-width="1"/></svg>
-                <span>chat.openai.com</span>
-              </div>
-            </div>
-            <div class="mockup-body">
-              <!-- Main chat area (left) -->
-              <div class="mockup-chat">
-                <div class="mockup-chat-msg assistant">
-                  <div class="mockup-avatar" style="background:#10A37F; color:#fff; font-size:11px; display:flex; align-items:center; justify-content:center;">AI</div>
-                  <div class="mockup-bubble">How can I help you today?</div>
+              <div class="cp-body">
+                <div class="cp-folder" style="border-left-color: #D97757;">
+                  <div class="cp-folder-name">📁 Marketing <span class="cp-count">3</span></div>
+                  <div class="cp-prompt">Blog post intro</div>
+                  <div class="cp-prompt cp-prompt-active">SEO meta description</div>
+                  <div class="cp-prompt">Social media hook</div>
                 </div>
-                <!-- Right-click context menu overlay -->
-                <div class="mockup-context-menu">
-                  <div class="mockup-cm-header">
-                    <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#D97757"/><path d="M10 11h12M10 16h8M10 21h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
-                    PromptFlow
-                  </div>
-                  <div class="mockup-cm-divider"></div>
-                  <div class="mockup-cm-folder">
-                    <span style="color:#D97757;">📁</span> Marketing
-                  </div>
-                  <div class="mockup-cm-item">Blog post intro</div>
-                  <div class="mockup-cm-item mockup-cm-active">SEO meta description</div>
-                  <div class="mockup-cm-item">Social media hook</div>
-                  <div class="mockup-cm-divider"></div>
-                  <div class="mockup-cm-folder">
-                    <span style="color:#6A9BCC;">📁</span> Coding
-                  </div>
-                  <div class="mockup-cm-item">Code review prompt</div>
-                  <div class="mockup-cm-item">Debug this error</div>
-                  <div class="mockup-cm-divider"></div>
-                  <div class="mockup-cm-folder">
-                    <span style="color:#788C5D;">📁</span> Writing
-                  </div>
+                <div class="cp-folder" style="border-left-color: #6A9BCC;">
+                  <div class="cp-folder-name">📁 Coding <span class="cp-count">2</span></div>
+                  <div class="cp-prompt">Code review prompt</div>
+                  <div class="cp-prompt">Debug this error</div>
                 </div>
-                <!-- Input area with pasted prompt -->
-                <div class="mockup-input-area">
-                  <div class="mockup-input-text">Write a compelling SEO meta description for the following page. Keep it under 155 characters, include the primary keyword, and add a clear call to action…</div>
-                  <div class="mockup-input-btn">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13l10-5L3 3v4l6 1-6 1v4z" fill="#fff"/></svg>
-                  </div>
-                </div>
-              </div>
-              <!-- Side panel (right) -->
-              <div class="mockup-sidepanel">
-                <div class="mockup-sp-header">
-                  <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#D97757"/><path d="M10 11h12M10 16h8M10 21h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
-                  <span style="font-weight:700; font-size: 13px;">PromptFlow</span>
-                </div>
-                <div class="mockup-sp-folder" style="border-left: 3px solid #D97757;">
-                  <div class="mockup-sp-fname">📁 Marketing <span class="mockup-sp-count">3</span></div>
-                  <div class="mockup-sp-prompt">Blog post intro</div>
-                  <div class="mockup-sp-prompt mockup-sp-active">SEO meta description</div>
-                  <div class="mockup-sp-prompt">Social media hook</div>
-                </div>
-                <div class="mockup-sp-folder" style="border-left: 3px solid #6A9BCC;">
-                  <div class="mockup-sp-fname">📁 Coding <span class="mockup-sp-count">2</span></div>
-                </div>
-                <div class="mockup-sp-folder" style="border-left: 3px solid #788C5D;">
-                  <div class="mockup-sp-fname">📁 Writing <span class="mockup-sp-count">4</span></div>
+                <div class="cp-folder" style="border-left-color: #788C5D;">
+                  <div class="cp-folder-name">📁 Writing <span class="cp-count">4</span></div>
+                  <div class="cp-prompt">Rewrite for clarity</div>
+                  <div class="cp-prompt">Summarize article</div>
                 </div>
               </div>
             </div>
+
+            <!-- Arrow between cards -->
+            <div class="hero-arrow">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="22" fill="var(--accent)" opacity="0.12"/>
+                <path d="M18 24h12M26 20l4 4-4 4" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- Card 2: Context Menu — "Right-click, pick, done" -->
+            <div class="hero-card card-menu">
+              <div class="cm-header">
+                <div class="cm-logo">
+                  <svg viewBox="0 0 32 32" fill="none"><path d="M10 11h12M10 16h8M10 21h10" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/></svg>
+                </div>
+                <span>PromptFlow</span>
+              </div>
+              <div class="cm-body">
+                <div class="cm-divider"></div>
+                <div class="cm-folder"><span style="color:#D97757;">📁</span> Marketing</div>
+                <div class="cm-item">Blog post intro</div>
+                <div class="cm-item cm-item-active">SEO meta description ✓</div>
+                <div class="cm-item">Social media hook</div>
+                <div class="cm-divider"></div>
+                <div class="cm-folder"><span style="color:#6A9BCC;">📁</span> Coding</div>
+                <div class="cm-divider"></div>
+                <div class="cm-folder"><span style="color:#788C5D;">📁</span> Writing</div>
+              </div>
+            </div>
+
           </div>
-          <!-- Floating annotation labels -->
-          <div class="mockup-label mockup-label-1">
-            <span class="mockup-label-dot"></span> Right-click to paste
+
+          <!-- Floating labels -->
+          <div class="hero-label hero-label-1">
+            <span class="hero-label-dot"></span> Save &amp; organize prompts
           </div>
-          <div class="mockup-label mockup-label-2">
-            <span class="mockup-label-dot"></span> Organized in folders
+          <div class="hero-label hero-label-2">
+            <span class="hero-label-dot"></span> Right-click to auto-paste
           </div>
         </div>
       </div>
