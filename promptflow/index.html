@@ -36,7 +36,7 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Free tier — 5 prompts, 3 folders"
+        "description": "Free tier — save prompts, organize into folders, auto-paste into any AI"
       },
       {
         "@type": "Offer",
@@ -422,33 +422,7 @@
     }
     .hero-trust span { font-weight: 600; color: var(--text-secondary); }
 
-    /* Hero screenshot */
-    .hero-screenshot {
-      max-width: 900px;
-      margin: var(--space-xl) auto 0;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border);
-      background: var(--bg-elevated);
-    }
-    .hero-screenshot img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    /* Placeholder for screenshot */
-    .screenshot-placeholder {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-tertiary);
-      font-size: var(--text-lg);
-      font-weight: 500;
-    }
+    /* (hero-screenshot removed — replaced by carousel) */
 
     /* --- Pain Points --- */
     .pain {
@@ -995,6 +969,101 @@
     /* --- Scroll margin for anchors --- */
     [id] { scroll-margin-top: 80px; }
 
+    /* ========== SCREENSHOT CAROUSEL ========== */
+    .carousel-wrapper {
+      max-width: 960px;
+      margin: var(--space-xl) auto 0;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: var(--space-md);
+    }
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.25s var(--ease), transform 0.2s var(--ease);
+    }
+    .carousel-dot:hover {
+      background: var(--text-tertiary);
+      transform: scale(1.2);
+    }
+    .carousel-dot.active {
+      background: var(--accent);
+      transform: scale(1.15);
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(calc(-50% - 20px));
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.15s var(--ease);
+      z-index: 2;
+      color: var(--text-secondary);
+    }
+    .carousel-btn:hover {
+      background: var(--bg-secondary);
+      box-shadow: var(--shadow-lg);
+      color: var(--accent);
+    }
+    .carousel-btn-prev { left: -22px; }
+    .carousel-btn-next { right: -22px; }
+    .carousel-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+    @media (max-width: 1040px) {
+      .carousel-btn-prev { left: 8px; }
+      .carousel-btn-next { right: 8px; }
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+        background: rgba(250, 249, 245, 0.9);
+      }
+    }
+    @media (max-width: 768px) {
+      .carousel-wrapper { margin-top: var(--space-lg); }
+      .carousel-btn { display: none; }
+    }
+
     /* Chrome Web Store badge styling */
     .chrome-badge {
       display: inline-flex;
@@ -1207,13 +1276,42 @@
         </a>
       </div>
       <p class="hero-trust animate animate-d4">
-        <span>✦ Free forever</span> · 5 prompts, 3 folders · No account needed · Your data stays local
+        <span>✦ Free forever</span> · No account needed · Your data stays local
       </p>
 
       <!-- Hero Screenshot Showcase -->
       <div class="animate animate-d4">
-        <div class="hero-screenshot">
-          <img src="screenshot-1.png" alt="PromptFlow AI Prompt Manager — Save, organize, and auto-paste your AI prompts" width="1280" height="800" loading="eager">
+        <div class="carousel-wrapper" id="heroCarousel">
+          <button class="carousel-btn carousel-btn-prev" aria-label="Previous screenshot">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="screenshot-1.png" alt="PromptFlow — Your prompts, always flowing. Save, organize, and access your best AI prompts." width="1280" height="800" loading="eager">
+            </div>
+            <div class="carousel-slide">
+              <img src="screenshot-2.png" alt="PromptFlow — Right-click, pick, done. Auto-paste prompts into ChatGPT, Claude, and any AI." width="1280" height="800" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="screenshot-3.png" alt="PromptFlow works with every AI — ChatGPT, Claude, Gemini, Perplexity, Grok, Copilot, DeepSeek." width="1280" height="800" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="screenshot-4.png" alt="PromptFlow side panel — Your prompt library, always open alongside any tab." width="1280" height="800" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="screenshot-5.png" alt="PromptFlow Cloud Sync — Your prompts follow you across all your devices." width="1280" height="800" loading="lazy">
+            </div>
+          </div>
+          <button class="carousel-btn carousel-btn-next" aria-label="Next screenshot">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Screenshot 1" data-slide="0"></button>
+            <button class="carousel-dot" aria-label="Screenshot 2" data-slide="1"></button>
+            <button class="carousel-dot" aria-label="Screenshot 3" data-slide="2"></button>
+            <button class="carousel-dot" aria-label="Screenshot 4" data-slide="3"></button>
+            <button class="carousel-dot" aria-label="Screenshot 5" data-slide="4"></button>
+          </div>
         </div>
       </div>
     </div>
@@ -1784,6 +1882,79 @@
         }
       });
     });
+
+    // Screenshot carousel
+    (function() {
+      var carousel = document.getElementById('heroCarousel');
+      if (!carousel) return;
+      var track = carousel.querySelector('.carousel-track');
+      var slides = carousel.querySelectorAll('.carousel-slide');
+      var dots = carousel.querySelectorAll('.carousel-dot');
+      var prevBtn = carousel.querySelector('.carousel-btn-prev');
+      var nextBtn = carousel.querySelector('.carousel-btn-next');
+      var current = 0;
+      var total = slides.length;
+      var autoTimer = null;
+      var paused = false;
+
+      function goTo(index) {
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        current = index;
+        track.scrollTo({ left: slides[current].offsetLeft, behavior: 'smooth' });
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      prevBtn.addEventListener('click', function() { goTo(current - 1); resetAuto(); });
+      nextBtn.addEventListener('click', function() { goTo(current + 1); resetAuto(); });
+
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          goTo(parseInt(this.getAttribute('data-slide')));
+          resetAuto();
+        });
+      });
+
+      // Sync dots on manual scroll/swipe
+      var scrollTimer;
+      track.addEventListener('scroll', function() {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+          var scrollLeft = track.scrollLeft;
+          var slideWidth = slides[0].offsetWidth;
+          var idx = Math.round(scrollLeft / slideWidth);
+          if (idx !== current) {
+            current = idx;
+            dots.forEach(function(d, i) {
+              d.classList.toggle('active', i === current);
+            });
+          }
+        }, 80);
+      });
+
+      // Auto-advance every 5 seconds
+      function startAuto() {
+        autoTimer = setInterval(function() {
+          if (!paused) goTo(current + 1);
+        }, 5000);
+      }
+      function resetAuto() {
+        clearInterval(autoTimer);
+        startAuto();
+      }
+
+      // Pause on hover
+      carousel.addEventListener('mouseenter', function() { paused = true; });
+      carousel.addEventListener('mouseleave', function() { paused = false; });
+
+      // Pause on focus for accessibility
+      carousel.addEventListener('focusin', function() { paused = true; });
+      carousel.addEventListener('focusout', function() { paused = false; });
+
+      startAuto();
+    })();
 
     // Intersection Observer for fade-in animations
     if ('IntersectionObserver' in window) {
