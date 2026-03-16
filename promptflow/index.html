@@ -440,7 +440,7 @@
     }
     .pain-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--space-md);
     }
     .pain-card {
@@ -840,8 +840,8 @@
       .step:not(:last-child) .step-num::after { display: none; }
       .nav-links { display: none; }
       .mobile-cta { display: inline-flex; }
+      .pain-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
-
       .footer-inner { flex-direction: column; text-align: center; }
       .privacy-content { padding: var(--space-md); }
     }
@@ -1132,7 +1132,6 @@
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
-
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#privacy">Privacy</a></li>
         <li><a href="/">More Tools</a></li>
@@ -1306,13 +1305,6 @@
           </div>
           <h3>Auto-paste into any AI chat</h3>
           <p>Right-click on ChatGPT, Claude, Gemini, or any AI and select your prompt. It auto-pastes directly into the input field — no manual copy-paste, no tab switching, no friction.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-          </div>
-          <h3>Right-click context menu access</h3>
-          <p>Your entire prompt library lives in your right-click menu. Browse folders and prompts without ever leaving the page you're on. The fastest way to insert AI prompts.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
