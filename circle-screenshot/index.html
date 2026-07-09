@@ -405,12 +405,14 @@
 
     /* --- Responsive --- */
     @media (max-width: 768px) {
-      h1 { font-size: var(--text-3xl); }
+      h1 { font-size: 2.15rem; line-height: 1.15; }
       h2 { font-size: var(--text-2xl); }
       section { padding: var(--space-xl) 0; }
       .hero { padding: calc(64px + var(--space-xl)) 0 var(--space-xl); }
       .steps { grid-template-columns: 1fr; gap: var(--space-lg); }
-      .nav-links { display: none; }
+      .nav-links { display: flex; gap: var(--space-sm); }
+      .nav-links li:not(:last-child) { display: none; }
+      .nav-cta { padding: 7px 14px; }
       .features-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 340px; }
       .footer-inner { flex-direction: column; text-align: center; }
@@ -460,7 +462,7 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 7l2 2 3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Free Chrome Extension
       </div>
-      <h1 class="animate animate-d1">Every photo tool gives you a square.<br>This one gives you a perfect circle.</h1>
+      <h1 class="animate animate-d1">Every photo editor gives you a square.<br>This one gives you a perfect circle.</h1>
       <p class="hero-sub animate animate-d2">
         Circle Crop Image crops any photo into a perfect circle in seconds — and captures circular screenshots from any webpage. Transparent PNG download, ready to use. No more opening Photoshop. No more uploading to a crop website.
       </p>
@@ -552,7 +554,7 @@
   <section class="features" id="features">
     <div class="container">
       <div class="features-header">
-        <h2>Two modes, one tool</h2>
+        <h2>Two modes, one extension</h2>
         <p>A circle image cropper and circular screenshot tool in one. Crop uploaded photos into circles. Capture circles from live webpages. Both in Chrome, both private.</p>
       </div>
       <div class="hero-screenshot" style="margin-bottom: var(--space-lg);">
@@ -610,7 +612,7 @@
     <div class="container">
       <div class="audience-header">
         <h2>Built for anyone who needs a circle</h2>
-        <p>If you've ever needed a round profile picture and your tools only gave you a square, this is for you.</p>
+        <p>If you've ever needed a round profile picture and your photo editor only gave you a square, this is for you.</p>
       </div>
       <div class="audience-grid">
         <div class="audience-card">
